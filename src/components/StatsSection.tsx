@@ -1,4 +1,3 @@
-
 import { TrendingUp, Clock, Target, Users } from "lucide-react";
 
 export const StatsSection = () => {
@@ -30,7 +29,7 @@ export const StatsSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section id="stats" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (

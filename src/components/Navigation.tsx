@@ -3,6 +3,12 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,6 +16,19 @@ export const Navigation = () => {
 
   const isActive = (path: string) => {
     return location.pathname === path;
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    if (location.pathname !== '/') {
+      // If not on home page, navigate to home first, then scroll
+      window.location.href = `/#${sectionId}`;
+    } else {
+      // If on home page, scroll directly
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
 
   return (
@@ -31,11 +50,37 @@ export const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <div className="relative group">
-                <button className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center transition-colors">
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center transition-colors">
                   Platform <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-              </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-white shadow-lg border border-slate-200">
+                  <DropdownMenuItem 
+                    onClick={() => scrollToSection('features')}
+                    className="cursor-pointer hover:bg-slate-50"
+                  >
+                    Features Overview
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => scrollToSection('stats')}
+                    className="cursor-pointer hover:bg-slate-50"
+                  >
+                    Platform Stats
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => scrollToSection('testimonials')}
+                    className="cursor-pointer hover:bg-slate-50"
+                  >
+                    Client Testimonials
+                  </DropdownMenuItem>
+                  <DropdownMenuItem 
+                    onClick={() => scrollToSection('cta')}
+                    className="cursor-pointer hover:bg-slate-50"
+                  >
+                    Get Started
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
               <Link 
                 to="/features" 
                 className={`px-3 py-2 text-sm font-medium transition-colors ${
@@ -96,6 +141,15 @@ export const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-slate-200">
+              <button 
+                onClick={() => {
+                  scrollToSection('features');
+                  setIsMenuOpen(false);
+                }}
+                className="block w-full text-left px-3 py-2 text-base font-medium text-slate-700 hover:text-blue-600"
+              >
+                Platform Overview
+              </button>
               <Link 
                 to="/features" 
                 className={`block px-3 py-2 text-base font-medium ${

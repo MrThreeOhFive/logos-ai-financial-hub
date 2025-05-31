@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
@@ -11,7 +10,7 @@ export const CTASection = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-blue-600 to-indigo-700">
+    <section id="cta" className="py-24 bg-gradient-to-br from-blue-600 to-indigo-700">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Ready to Transform Your
