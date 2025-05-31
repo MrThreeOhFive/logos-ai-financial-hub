@@ -1,16 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-
 export const CTASection = () => {
-  const benefits = [
-    "14-day free trial",
-    "No setup fees",
-    "Cancel anytime",
-    "Expert onboarding"
-  ];
-
-  return (
-    <section id="cta" className="py-24 bg-gradient-to-br from-blue-600 to-indigo-700">
+  const benefits = ["14-day free trial", "No setup fees", "Cancel anytime", "Expert onboarding"];
+  return <section id="cta" className="py-24 bg-gradient-to-br from-blue-600 to-indigo-700">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
           Ready to Transform Your
@@ -24,24 +16,18 @@ export const CTASection = () => {
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 mb-8">
-          {benefits.map((benefit, index) => (
-            <div key={index} className="flex items-center text-blue-100">
+          {benefits.map((benefit, index) => <div key={index} className="flex items-center text-blue-100">
               <CheckCircle className="h-5 w-5 mr-2 text-green-400" />
               {benefit}
-            </div>
-          ))}
+            </div>)}
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            size="lg" 
-            className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4 h-auto font-semibold"
-            onClick={() => window.location.href = '/dashboard'}
-          >
+          <Button size="lg" className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-4 h-auto font-semibold" onClick={() => window.location.href = '/dashboard'}>
             Start Free Trial
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10 text-lg px-8 py-4 h-auto">
+          <Button variant="outline" size="lg" className="border-white px-8 py-4 h-auto bg-slate-50 text-[blue-60] text-blue-600">
             Schedule Demo
           </Button>
         </div>
@@ -50,6 +36,5 @@ export const CTASection = () => {
           Used by 500+ financial institutions • SOC 2 Type II Certified • Bank-grade security
         </p>
       </div>
-    </section>
-  );
+    </section>;
 };
