@@ -27,7 +27,7 @@ export const CTASection = () => {
             Start Free Trial
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="border-white px-8 py-4 h-auto bg-slate-50 text-[blue-60] text-blue-600">
+          <Button variant="outline" size="lg" className="border-white px-8 py-4 h-auto bg-slate-50 text-blue-600 text-lg">
             Schedule Demo
           </Button>
         </div>
