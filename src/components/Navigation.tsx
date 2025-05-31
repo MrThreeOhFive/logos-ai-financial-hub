@@ -2,9 +2,15 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
+  };
 
   return (
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200">
@@ -13,10 +19,12 @@ export const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Λ</span>
-              </div>
-              <span className="ml-2 text-xl font-bold text-slate-900">Logos</span>
+              <Link to="/" className="flex items-center">
+                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">Λ</span>
+                </div>
+                <span className="ml-2 text-xl font-bold text-slate-900">Logos</span>
+              </Link>
             </div>
           </div>
 
@@ -28,18 +36,38 @@ export const Navigation = () => {
                   Platform <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
               </div>
-              <a href="#features" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+              <Link 
+                to="/features" 
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive('/features') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+              >
                 Features
-              </a>
-              <a href="#solutions" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+              </Link>
+              <Link 
+                to="/solutions" 
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive('/solutions') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+              >
                 Solutions
-              </a>
-              <a href="#pricing" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+              </Link>
+              <Link 
+                to="/pricing" 
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive('/pricing') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+              >
                 Pricing
-              </a>
-              <a href="#resources" className="text-slate-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors">
+              </Link>
+              <Link 
+                to="/resources" 
+                className={`px-3 py-2 text-sm font-medium transition-colors ${
+                  isActive('/resources') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+              >
                 Resources
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -68,21 +96,42 @@ export const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-slate-200">
-              <a href="#platform" className="text-slate-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
-                Platform
-              </a>
-              <a href="#features" className="text-slate-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+              <Link 
+                to="/features" 
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/features') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Features
-              </a>
-              <a href="#solutions" className="text-slate-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+              </Link>
+              <Link 
+                to="/solutions" 
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/solutions') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Solutions
-              </a>
-              <a href="#pricing" className="text-slate-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+              </Link>
+              <Link 
+                to="/pricing" 
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/pricing') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Pricing
-              </a>
-              <a href="#resources" className="text-slate-700 hover:text-blue-600 block px-3 py-2 text-base font-medium">
+              </Link>
+              <Link 
+                to="/resources" 
+                className={`block px-3 py-2 text-base font-medium ${
+                  isActive('/resources') ? 'text-blue-600' : 'text-slate-700 hover:text-blue-600'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Resources
-              </a>
+              </Link>
               <div className="flex flex-col space-y-2 px-3 py-2">
                 <Button variant="ghost" size="sm" className="justify-start">
                   Sign In
