@@ -16,44 +16,64 @@ export const HeroSection = () => {
           <div className="mb-8 flex justify-center">
             <Badge variant="secondary" className="px-4 py-2 bg-white/50 backdrop-blur-sm border border-blue-200 text-blue-700 hover:bg-white/70 transition-colors">
               <Sparkles className="w-4 h-4 mr-2" />
-              Introducing AI-Powered Fund Administration
+              Institutional Power, Personalized for Your Legacy
               <ArrowRight className="w-4 h-4 ml-2" />
             </Badge>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-slate-900 mb-6 leading-tight">
-            The Future of{" "}
+            Intelligent Wealth{" "}
             <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Financial Operations
+              Command Center
             </span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Logos revolutionizes portfolio accounting and fund administration with AI-powered automation, 
-            eliminating manual processes and delivering intelligent insights for financial professionals.
+            The AI-powered financial platform built for family offices and private wealth management. 
+            Consolidate complex assets, ensure privacy, and make informed decisions with institutional-grade technology.
           </p>
+
+          {/* Key Benefits */}
+          <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+            <div className="flex items-center text-slate-700">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              Bank-Grade Security
+            </div>
+            <div className="flex items-center text-slate-700">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              Unified Asset View
+            </div>
+            <div className="flex items-center text-slate-700">
+              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              AI-Driven Insights
+            </div>
+            <div className="flex items-center text-slate-700">
+              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              Bespoke Reporting
+            </div>
+          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg px-8 py-4 h-auto">
-              Start Free Trial
+              Request Private Consultation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button variant="outline" size="lg" className="text-lg px-8 py-4 h-auto border-slate-300 hover:bg-slate-50">
               <Play className="mr-2 h-5 w-5" />
-              Watch Demo
+              Schedule Personalized Demo
             </Button>
           </div>
 
           {/* Trust Indicators */}
           <div className="flex flex-col items-center space-y-4">
-            <p className="text-sm text-slate-500">Trusted by leading financial institutions</p>
+            <p className="text-sm text-slate-500">Trusted by leading family offices and private wealth managers</p>
             <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-              {["Goldman Sachs", "BlackRock", "Citadel", "Bridgewater", "Apollo"].map((company) => (
-                <div key={company} className="text-slate-400 font-medium text-lg">
-                  {company}
+              {["Multi-Generational Families", "Single Family Offices", "Private Wealth Advisors", "Trust Companies", "Estate Planners"].map((client) => (
+                <div key={client} className="text-slate-400 font-medium text-sm">
+                  {client}
                 </div>
               ))}
             </div>
@@ -70,23 +90,23 @@ export const HeroSection = () => {
                   <div className="w-3 h-3 bg-yellow-500 rounded-full" />
                   <div className="w-3 h-3 bg-green-500 rounded-full" />
                 </div>
-                <div className="text-sm text-slate-400">Logos Dashboard</div>
+                <div className="text-sm text-slate-400">Family Office Dashboard</div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="bg-slate-800 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-2">Total AUM</div>
-                  <div className="text-2xl font-bold">$2.4B</div>
-                  <div className="text-green-400 text-sm">+12.4% this month</div>
+                  <div className="text-sm text-slate-400 mb-2">Total Family Assets</div>
+                  <div className="text-2xl font-bold">$847M</div>
+                  <div className="text-green-400 text-sm">+8.2% YTD performance</div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-2">Active Funds</div>
-                  <div className="text-2xl font-bold">127</div>
-                  <div className="text-blue-400 text-sm">3 new this week</div>
+                  <div className="text-sm text-slate-400 mb-2">Active Entities</div>
+                  <div className="text-2xl font-bold">23</div>
+                  <div className="text-blue-400 text-sm">Trusts, LPs & Holdings</div>
                 </div>
                 <div className="bg-slate-800 rounded-lg p-4">
-                  <div className="text-sm text-slate-400 mb-2">Processing Time</div>
-                  <div className="text-2xl font-bold">2.3hrs</div>
-                  <div className="text-green-400 text-sm">-85% with AI</div>
+                  <div className="text-sm text-slate-400 mb-2">Risk Score</div>
+                  <div className="text-2xl font-bold">Low</div>
+                  <div className="text-green-400 text-sm">AI-monitored</div>
                 </div>
               </div>
             </div>

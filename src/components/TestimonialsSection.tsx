@@ -1,27 +1,28 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 
 export const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "Logos has transformed our fund administration. What used to take days now takes hours, and the AI-powered insights have elevated our entire operation.",
-      author: "Sarah Chen",
-      title: "COO",
-      company: "Meridian Capital Partners",
+      quote: "Logos transformed our family office operations. We now have complete visibility across our complex asset structure and can generate customized reports for different family members in minutes, not days.",
+      author: "Chief Investment Officer",
+      title: "Multi-Generational Family Office",
+      company: "$2.1B in Assets Under Management",
       rating: 5
     },
     {
-      quote: "The automated data extraction alone has saved us 40+ hours per month. The platform's intelligence continues to amaze our team.",
-      author: "Michael Rodriguez",
-      title: "Fund Administrator",
-      company: "Atlas Family Office",
+      quote: "The AI-powered insights have been game-changing for our risk management. Logos proactively identifies potential issues and opportunities across our diverse investment portfolio before they become problems.",
+      author: "Family Office Principal",
+      title: "Single Family Office",
+      company: "International Private Wealth",
       rating: 5
     },
     {
-      quote: "Finally, a platform that understands the complexities of private equity accounting. The waterfall calculations are flawless.",
-      author: "Jennifer Park",
-      title: "Investment Accountant",
-      company: "Pinnacle Ventures",
+      quote: "Security and privacy were our top concerns. Logos exceeded our expectations with bank-grade security and granular access controls, giving us complete confidence in protecting our family's sensitive information.",
+      author: "Chief Operating Officer",
+      title: "Private Wealth Management Firm",
+      company: "Serving 12 Ultra-HNW Families",
       rating: 5
     }
   ];
@@ -32,10 +33,10 @@ export const TestimonialsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Trusted by <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Industry Leaders</span>
+            Trusted by <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Leading Family Offices</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            See how financial professionals are revolutionizing their operations with Logos
+            See how sophisticated family offices achieve operational excellence and enhanced stewardship with Logos
           </p>
         </div>
 
@@ -71,16 +72,16 @@ export const TestimonialsSection = () => {
         <div className="mt-16 text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
             <div>
-              <div className="text-3xl font-bold text-slate-900">4.9/5</div>
-              <div className="text-slate-600">Customer Satisfaction</div>
+              <div className="text-3xl font-bold text-slate-900">SOC 2</div>
+              <div className="text-slate-600">Type II Certified</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-slate-900">99.9%</div>
-              <div className="text-slate-600">Uptime Guarantee</div>
+              <div className="text-3xl font-bold text-slate-900">256-bit</div>
+              <div className="text-slate-600">Encryption Standard</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-slate-900">24/7</div>
-              <div className="text-slate-600">Enterprise Support</div>
+              <div className="text-slate-600">Dedicated Support</div>
             </div>
           </div>
         </div>
